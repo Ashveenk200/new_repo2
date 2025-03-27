@@ -9,11 +9,8 @@ from indic_transliteration.sanscript import transliterate
 # Load Whisper model
 @st.cache_resource
 def load_model():
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    if device == "cuda":
-        st.success("CUDA is available. Using GPU for faster transcription.")
-    else:
-        st.warning("CUDA not available. Using CPU, which may be slower.")
+    device = "cpu"
+    st.warning("Using CPU for transcription. This may be slower.")
     return pipeline("automatic-speech-recognition", "openai/whisper-large-v3", torch_dtype=torch.float16 if device == "cuda" else torch.float32, device=device)
 
 whisper = load_model()
