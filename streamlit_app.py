@@ -6,7 +6,8 @@ from transformers import pipeline
 import time
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import transliterate
-
+import warnings
+warnings.filterwarnings("ignore", category=SyntaxWarning)
 
 
 # Load Whisper model
