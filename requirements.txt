@@ -2,3 +2,4 @@ streamlit==1.30.0
 torch==2.2.1
 transformers==4.39.1
 indic-transliteration==2.3.48
+torch
