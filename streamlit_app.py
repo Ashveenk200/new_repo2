@@ -1,9 +1,13 @@
-import streamlit as st
-import torch
-from transformers import pipeline
-import time
-from indic_transliteration import sanscript
-from indic_transliteration.sanscript import transliterate
+try:
+    
+    import streamlit as st
+    import torch
+    from transformers import pipeline
+    import time
+    from indic_transliteration import sanscript
+    from indic_transliteration.sanscript import transliterate
+except ImportError as e:
+    st.error(f"ImportError: {e}")
 
 
 # Load Whisper model
